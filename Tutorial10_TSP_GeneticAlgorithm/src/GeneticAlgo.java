@@ -93,27 +93,27 @@ public class GeneticAlgo {
 		public Individual crossOver (Individual p1, double rate) {
 			
 			//Declate a chromosome variable (use Set<Integer>,  new LinkedHashSet<Integer>)
-			Set<Integer> chromosome = new LinkedHashSet<Integer>();//we use set to get unique number within the range
+			
 			
 			//Declare the result variable (should be Individual type), the res size should be the parent's size
-			Individual res = new Individual(p1.chromosome.size());
+			
 			
 			//Get the crossover point. Use the rate. Value of crossover point should be int
-			int point = (int)(p1.chromosome.size()*rate);
+			
+
 		
 			//A for loop to copy the genetic from the parent up to the crossover point
-			for (int i=0; i<point; i++) {
-				chromosome.add(p1.chromosome.get(i)); //copy some genes from the parent
-			}
+			
+
 			
 			//Now to get the remaining genes by random. Use while loop to get the remaining genes
-			Random r = new Random();
-			while(chromosome.size()<p1.chromosome.size()) {
-				chromosome.add(r.nextInt(p1.chromosome.size())); //get the remaining genes by random
-			}
+			
+
+			
 			
 			//Since our chromosome in Individual class is ArrayList, convert the Set variable into ArrayList
-			res.chromosome = new ArrayList<Integer>(chromosome); //convert set into arrayList
+			
+			
 			
 			return res;
 		}
